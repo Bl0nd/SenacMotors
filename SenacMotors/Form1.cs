@@ -22,7 +22,25 @@ namespace SenacMotors
         private void btnAcelerar_Click(object sender, EventArgs e)
         {
             novoCarro.Acelerar();
-            lblVelocimetro.Text =novoCarro.Velocidade.ToString();
+            lblVelocimetro.Text = novoCarro.GetVelocidade().ToString();
+        }
+
+        private void btnFreiar_Click(object sender, EventArgs e)
+        {
+            novoCarro.Freiar();
+            lblVelocimetro.Text = novoCarro.GetVelocidade().ToString();
+        }
+
+        private void btnSobeMarcha_Click(object sender, EventArgs e)
+        {
+            novoCarro.TrocarMarcha("+");
+            lblMarcha.Text = novoCarro.GetMarcha().ToString();
+        }
+
+        private void btnDesceMarcha_Click(object sender, EventArgs e)
+        {
+            novoCarro.TrocarMarcha("-");
+            lblMarcha.Text = novoCarro.GetMarcha().ToString();
         }
     }
 }

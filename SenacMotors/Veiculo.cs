@@ -14,7 +14,7 @@ namespace SenacMotors
         public string Cor { get; set; }
         public int Ano { get; set; }
         protected int MarchaAtual { get; set; }
-        public int Velocidade { get; set; }
+        protected int Velocidade { get; set; }
         protected bool Ligado { get; set; }
         public bool Automatico { get; set; }
 
@@ -32,7 +32,7 @@ namespace SenacMotors
             }
         }
 
-        public int TrocarMarcha(string marcha)
+        public void TrocarMarcha(string marcha)
         {
             if (marcha == "+")
             {
@@ -46,10 +46,10 @@ namespace SenacMotors
             {
                 throw new Exception("Marcha Inválida");
             }
-            return MarchaAtual;
+
         }
 
-        public int TrocarMarcha(bool automatico)
+        public void TrocarMarcha(bool automatico)
         {
             switch (Velocidade)
             {
@@ -76,14 +76,24 @@ namespace SenacMotors
                     break;
             }
 
-            return MarchaAtual;
+
         }
 
-        public string Direcionar(string direcao)
+        public virtual string Direcionar(string direcao)
         {
             string volante = $"Virando o volante para {direcao}";
 
             return volante;
+        }
+
+        public int GetVelocidade()
+        {
+            return Velocidade;
+        }
+
+        public int GetMarcha()
+        {
+            return MarchaAtual;
         }
     }
 }
