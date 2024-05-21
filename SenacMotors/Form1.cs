@@ -1,3 +1,5 @@
+using Microsoft.VisualBasic;
+
 namespace SenacMotors
 {
     public partial class Form1 : Form
@@ -6,63 +8,77 @@ namespace SenacMotors
         {
             InitializeComponent();
         }
-        Carro novoCarro;
+        dynamic veiculo;
         private void btnCriarCarro_Click(object sender, EventArgs e)
         {
             //instanciar o carro
-            novoCarro = new Carro();
-            novoCarro.Marca = "Fiat";
-            novoCarro.Modelo = "Toro";
-            novoCarro.Cor = "Roxo";
-            novoCarro.Ano = 2022;
-            novoCarro.NumeroPortas = 4;
-            novoCarro.Automatico = true;
+            veiculo = new Carro();
+            veiculo.Marca = Interaction.InputBox("Digite a Marca");
+            veiculo.Modelo = Interaction.InputBox("Digite o Modelo");
+            veiculo.Cor = Interaction.InputBox("Digite a Cor");
+            veiculo.Ano = Convert.ToInt32(Interaction.InputBox("Digite o Ano"));
+            veiculo.NumeroPortas = 4;
+            veiculo.Automatico = Convert.ToBoolean(Interaction.InputBox("Digite true para automático, false para não"));
+
+            lblAviso.Text = $"Carro {veiculo.Marca} {veiculo.Modelo} criado com sucesso";
         }
 
         private void btnAcelerar_Click(object sender, EventArgs e)
         {
-            novoCarro.Acelerar();
-            lblVelocimetro.Text = novoCarro.GetVelocidade().ToString();
+            veiculo.Acelerar();
+            lblVelocimetro.Text = veiculo.GetVelocidade().ToString();
 
-            if (novoCarro.Automatico)
+            if (veiculo.Automatico)
             {
-                novoCarro.TrocarMarcha(true);
-                lblMarcha.Text = novoCarro.GetMarcha().ToString();
+                veiculo.TrocarMarcha(true);
+                lblMarcha.Text = veiculo.GetMarcha().ToString();
             }
         }
 
         private void btnFreiar_Click(object sender, EventArgs e)
         {
-            novoCarro.Freiar();
-            lblVelocimetro.Text = novoCarro.GetVelocidade().ToString();
+            veiculo.Freiar();
+            lblVelocimetro.Text = veiculo.GetVelocidade().ToString();
 
-            if (novoCarro.Automatico)
+            if (veiculo.Automatico)
             {
-                novoCarro.TrocarMarcha(true);
-                lblMarcha.Text = novoCarro.GetMarcha().ToString();
+                veiculo.TrocarMarcha(true);
+                lblMarcha.Text = veiculo.GetMarcha().ToString();
             }
         }
 
         private void btnSobeMarcha_Click(object sender, EventArgs e)
         {
-            novoCarro.TrocarMarcha("+");
-            lblMarcha.Text = novoCarro.GetMarcha().ToString();
+            veiculo.TrocarMarcha("+");
+            lblMarcha.Text = veiculo.GetMarcha().ToString();
         }
 
         private void btnDesceMarcha_Click(object sender, EventArgs e)
         {
-            novoCarro.TrocarMarcha("-");
-            lblMarcha.Text = novoCarro.GetMarcha().ToString();
+            veiculo.TrocarMarcha("-");
+            lblMarcha.Text = veiculo.GetMarcha().ToString();
         }
 
         private void btnEsquerda_Click(object sender, EventArgs e)
         {
-            lblAviso.Text = novoCarro.Direcionar("Esquerda");
+            lblAviso.Text = veiculo.Direcionar("Esquerda");
         }
 
         private void btnDireita_Click(object sender, EventArgs e)
         {
-            lblAviso.Text = novoCarro.Direcionar("Direita");
+            lblAviso.Text = veiculo.Direcionar("Direita");
+        }
+
+        private void btnCriarMoto_Click(object sender, EventArgs e)
+        {
+            veiculo = new Moto();
+            veiculo.Marca = Interaction.InputBox("Digite a Marca");
+            veiculo.Modelo = Interaction.InputBox("Digite o Modelo");
+            veiculo.Cor = Interaction.InputBox("Digite a Cor");
+            veiculo.Ano = Convert.ToInt32(Interaction.InputBox("Digite o Ano"));
+            veiculo.Automatico = Convert.ToBoolean(Interaction.InputBox("Digite true para automático, false para não"));
+
+            lblAviso.Text = $"Moto {veiculo.Marca} {veiculo.Modelo} criado com sucesso";
         }
     }
 }

@@ -178,6 +178,7 @@
             btnCriarMoto.TabIndex = 10;
             btnCriarMoto.Text = "Criar Moto";
             btnCriarMoto.UseVisualStyleBackColor = false;
+            btnCriarMoto.Click += btnCriarMoto_Click;
             // 
             // Form1
             // 
