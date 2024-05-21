@@ -21,6 +21,13 @@ namespace SenacMotors
             veiculo.Automatico = Convert.ToBoolean(Interaction.InputBox("Digite true para automático, false para não"));
 
             lblAviso.Text = $"Carro {veiculo.Marca} {veiculo.Modelo} criado com sucesso";
+
+            btnAcelerar.Enabled = true;
+            btnFreiar.Enabled = true;
+            btnSobeMarcha.Enabled = true;
+            btnDesceMarcha.Enabled = true;
+            btnDireita.Enabled = true;
+            btnEsquerda.Enabled = true; 
         }
 
         private void btnAcelerar_Click(object sender, EventArgs e)
@@ -79,6 +86,13 @@ namespace SenacMotors
             veiculo.Automatico = Convert.ToBoolean(Interaction.InputBox("Digite true para automático, false para não"));
 
             lblAviso.Text = $"Moto {veiculo.Marca} {veiculo.Modelo} criado com sucesso";
+
+            btnAcelerar.Enabled = true;
+            btnFreiar.Enabled = true;
+            btnSobeMarcha.Enabled = true;
+            btnDesceMarcha.Enabled = true;
+            btnDireita.Enabled = true;
+            btnEsquerda.Enabled = true;
         }
     }
 }

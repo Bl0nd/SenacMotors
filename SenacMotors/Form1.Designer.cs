@@ -58,6 +58,7 @@
             // btnAcelerar
             // 
             btnAcelerar.BackColor = Color.DarkGreen;
+            btnAcelerar.Enabled = false;
             btnAcelerar.Font = new Font("Arial", 14.25F);
             btnAcelerar.ForeColor = Color.Lime;
             btnAcelerar.Location = new Point(151, 27);
@@ -71,6 +72,7 @@
             // btnFreiar
             // 
             btnFreiar.BackColor = Color.DarkGreen;
+            btnFreiar.Enabled = false;
             btnFreiar.Font = new Font("Arial", 14.25F);
             btnFreiar.ForeColor = Color.Lime;
             btnFreiar.Location = new Point(299, 27);
@@ -115,6 +117,7 @@
             // btnDesceMarcha
             // 
             btnDesceMarcha.BackColor = Color.DarkGreen;
+            btnDesceMarcha.Enabled = false;
             btnDesceMarcha.Font = new Font("Arial", 14.25F);
             btnDesceMarcha.ForeColor = Color.Lime;
             btnDesceMarcha.Location = new Point(448, 96);
@@ -128,6 +131,7 @@
             // btnSobeMarcha
             // 
             btnSobeMarcha.BackColor = Color.DarkGreen;
+            btnSobeMarcha.Enabled = false;
             btnSobeMarcha.Font = new Font("Arial", 14.25F);
             btnSobeMarcha.ForeColor = Color.Lime;
             btnSobeMarcha.Location = new Point(448, 27);
@@ -142,6 +146,7 @@
             // 
             btnDireita.BackColor = Color.ForestGreen;
             btnDireita.BackgroundImageLayout = ImageLayout.None;
+            btnDireita.Enabled = false;
             btnDireita.Font = new Font("Arial", 14.25F);
             btnDireita.ForeColor = Color.Lime;
             btnDireita.Location = new Point(448, 337);
@@ -156,6 +161,7 @@
             // 
             btnEsquerda.BackColor = Color.ForestGreen;
             btnEsquerda.BackgroundImageLayout = ImageLayout.None;
+            btnEsquerda.Enabled = false;
             btnEsquerda.Font = new Font("Arial", 14.25F);
             btnEsquerda.ForeColor = Color.Lime;
             btnEsquerda.Location = new Point(12, 337);
