@@ -17,7 +17,7 @@ namespace SenacMotors
             veiculo.Modelo = Interaction.InputBox("Digite o Modelo");
             veiculo.Cor = Interaction.InputBox("Digite a Cor");
             veiculo.Ano = Convert.ToInt32(Interaction.InputBox("Digite o Ano"));
-            veiculo.NumeroPortas = 4;
+            veiculo.NumeroPortas = Convert.ToInt32(Interaction.InputBox("Digite o Número de Portas"));
             veiculo.Automatico = Convert.ToBoolean(Interaction.InputBox("Digite true para automático, false para não"));
 
             lblAviso.Text = $"Carro {veiculo.Marca} {veiculo.Modelo} criado com sucesso";
